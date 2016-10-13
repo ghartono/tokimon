@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :trainers
+  resources :trainers
 	match    ':controller(/:action(/:id))',    :via    =>    :get
 	match    ':controller(/:action(/:id))',    :via    =>    :post
 

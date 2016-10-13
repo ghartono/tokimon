@@ -1,7 +1,6 @@
 class CreateTrainers < ActiveRecord::Migration
   def change
     create_table :trainers do |t|
-      t.integer :tid
       t.string :tname
       t.integer :level
 

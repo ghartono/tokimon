@@ -11,7 +11,7 @@ class CreateTokimons < ActiveRecord::Migration
       t.integer :electric
       t.integer :ice
       t.integer :total
-      t.integer :tid
+      t.integer :trainer_id
 
       t.timestamps null: false
     end

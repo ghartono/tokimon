@@ -1,3 +1,3 @@
 class Trainer < ActiveRecord::Base
-	has many :tokimons
+	has_many :tokimons
 end
