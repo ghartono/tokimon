@@ -23,16 +23,16 @@ default: &default
 
 development:
   <<: *default
-  database: ruby-getting-started_development
+  database: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: ruby-getting-started
+  #username: ghartono
 
   # The password associated with the postgres role (username).
-  #password:
+  #password: Sa210492
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
