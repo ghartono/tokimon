@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tname: MyText
+  tid: 1
+  tname: MyString
   level: 1
 
 two:
-  tname: MyText
+  tid: 1
+  tname: MyString
   level: 1

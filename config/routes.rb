@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :trainers
+	match    ':controller(/:action(/:id))',    :via    =>    :get
+	match    ':controller(/:action(/:id))',    :via    =>    :post
+
+  get 'trainer/add'
+
+  get 'trainer/change'
+
+  get 'trainer/delete'
+
+  get 'trainer/displayinfo'
+
+  get 'trainer/displayall'
+
   resources :tokimons
   resources :trainers
   resources :tokimons

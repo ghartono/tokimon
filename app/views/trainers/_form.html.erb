@@ -12,8 +12,12 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :tid %><br>
+    <%= f.number_field :tid %>
+  </div>
+  <div class="field">
     <%= f.label :tname %><br>
-    <%= f.text_area :tname %>
+    <%= f.text_field :tname %>
   </div>
   <div class="field">
     <%= f.label :level %><br>

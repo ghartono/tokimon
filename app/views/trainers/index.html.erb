@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Tid</th>
       <th>Tname</th>
       <th>Level</th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @trainers.each do |trainer| %>
       <tr>
+        <td><%= trainer.tid %></td>
         <td><%= trainer.tname %></td>
         <td><%= trainer.level %></td>
         <td><%= link_to 'Show', trainer %></td>
