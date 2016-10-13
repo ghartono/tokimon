@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013060445) do
+ActiveRecord::Schema.define(version: 20161013064349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "tokimons", force: :cascade do |t|
-    t.text     "name"
-    t.integer  "weight"
+    t.string   "name"
     t.integer  "height"
+    t.integer  "weight"
     t.integer  "fly"
     t.integer  "fight"
     t.integer  "fire"

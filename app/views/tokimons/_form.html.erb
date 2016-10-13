@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_area :name %>
-  </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.number_field :weight %>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :height %><br>
     <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
   </div>
   <div class="field">
     <%= f.label :fly %><br>
@@ -52,8 +52,8 @@
     <%= f.number_field :total %>
   </div>
   <div class="field">
-    <%= f.label :tid %><br>
-    <%= f.number_field :tid %>
+    <%= f.label :trainer_id %><br>
+    <%= f.number_field :trainer_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

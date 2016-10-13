@@ -18,7 +18,7 @@ class TokimonsControllerTest < ActionController::TestCase
 
   test "should create tokimon" do
     assert_difference('Tokimon.count') do
-      post :create, tokimon: { electric: @tokimon.electric, fight: @tokimon.fight, fire: @tokimon.fire, fly: @tokimon.fly, height: @tokimon.height, ice: @tokimon.ice, name: @tokimon.name, tid: @tokimon.tid, total: @tokimon.total, water: @tokimon.water, weight: @tokimon.weight }
+      post :create, tokimon: { electric: @tokimon.electric, fight: @tokimon.fight, fire: @tokimon.fire, fly: @tokimon.fly, height: @tokimon.height, ice: @tokimon.ice, name: @tokimon.name, total: @tokimon.total, trainer_id: @tokimon.trainer_id, water: @tokimon.water, weight: @tokimon.weight }
     end
 
     assert_redirected_to tokimon_path(assigns(:tokimon))
@@ -35,7 +35,7 @@ class TokimonsControllerTest < ActionController::TestCase
   end
 
   test "should update tokimon" do
-    patch :update, id: @tokimon, tokimon: { electric: @tokimon.electric, fight: @tokimon.fight, fire: @tokimon.fire, fly: @tokimon.fly, height: @tokimon.height, ice: @tokimon.ice, name: @tokimon.name, tid: @tokimon.tid, total: @tokimon.total, water: @tokimon.water, weight: @tokimon.weight }
+    patch :update, id: @tokimon, tokimon: { electric: @tokimon.electric, fight: @tokimon.fight, fire: @tokimon.fire, fly: @tokimon.fly, height: @tokimon.height, ice: @tokimon.ice, name: @tokimon.name, total: @tokimon.total, trainer_id: @tokimon.trainer_id, water: @tokimon.water, weight: @tokimon.weight }
     assert_redirected_to tokimon_path(assigns(:tokimon))
   end
 

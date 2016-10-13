@@ -1,9 +1,9 @@
 class CreateTokimons < ActiveRecord::Migration
   def change
     create_table :tokimons do |t|
-      t.text :name
-      t.integer :weight
+      t.string :name
       t.integer :height
+      t.integer :weight
       t.integer :fly
       t.integer :fight
       t.integer :fire
