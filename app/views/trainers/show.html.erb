@@ -12,9 +12,44 @@
 
 <p>
   <strong>List of Tokimon owned:</strong>
-  <%= @tokimon_num %>
+  <%= @tokimon.count %>
 </p>
 
+<p>
+  <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Fly</th>
+      <th>Fight</th>
+      <th>Fire</th>
+      <th>Water</th>
+      <th>Electric</th>
+      <th>Ice</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @tokimon.each do |tokimon| %>
+      <tr>
+        <td><%= tokimon.name %></td>
+        <td><%= tokimon.height %></td>
+        <td><%= tokimon.weight %></td>
+        <td><%= tokimon.fly %></td>
+        <td><%= tokimon.fight %></td>
+        <td><%= tokimon.fire %></td>
+        <td><%= tokimon.water %></td>
+        <td><%= tokimon.electric %></td>
+        <td><%= tokimon.ice %></td>
+        <td><%= tokimon.total %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</p>
 
 <%= link_to 'Edit', edit_trainer_path(@trainer) %> |
 <%= link_to 'Back to Trainer', trainers_path %>
