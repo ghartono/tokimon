@@ -11,6 +11,20 @@ class TrainersController < ApplicationController
   # GET /trainers/1.json
   def show
     @tokimon = Tokimon.where(trainer_id: @trainer.id)
+    case @trainer.level
+      when 1
+       @title = "starting out"
+      when 2
+       @title = "noob"
+      when 3
+       @title = "normal"
+      when 4
+       @title = "better than normal"
+      when 5
+       @title = "try-hard"
+      else
+       @title = "no life"
+    end
   end
 
   # GET /trainers/new

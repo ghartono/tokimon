@@ -11,6 +11,26 @@ class TokimonsController < ApplicationController
   # GET /tokimons/1
   # GET /tokimons/1.json
   def show
+    if @tokimon.height < 50
+	@height = "small"
+    else if @tokimon.height < 100
+        @height = "medium"
+    else
+        @height = "large"
+    end
+    end
+
+    if @tokimon.weight < 50
+        @weight = "light"
+    else if @tokimon.weight < 100
+        @weight = "normal weighted"
+    else
+        @weight = "heavy"
+    end
+    end
+
+    
+    
   end
 
   # GET /tokimons/new

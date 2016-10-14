@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Description:</strong>
+  A <%= @height %> and <%= @weight %> creature.<br>
+</p>
+
+<p>
   <strong>Height:</strong>
   <%= @tokimon.height %>
 </p>
@@ -57,4 +62,4 @@
 </p>
 
 <%= link_to 'Edit', edit_tokimon_path(@tokimon) %> |
-<%= link_to 'Back', tokimons_path %>
+<%= link_to 'Back to Tokimon', tokimons_path %>
