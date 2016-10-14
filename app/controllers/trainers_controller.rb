@@ -10,6 +10,7 @@ class TrainersController < ApplicationController
   # GET /trainers/1
   # GET /trainers/1.json
   def show
+    @tokimon_num = Tokimon.where(trainer_id: @trainer.id).count
   end
 
   # GET /trainers/new
@@ -25,7 +26,7 @@ class TrainersController < ApplicationController
   # POST /trainers.json
   def create
     @trainer = Trainer.new(trainer_params)
-
+    @trainer.level = 1
     respond_to do |format|
       if @trainer.save
         format.html { redirect_to @trainer, notice: 'Trainer was successfully created.' }

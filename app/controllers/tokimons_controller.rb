@@ -26,11 +26,19 @@ class TokimonsController < ApplicationController
   # POST /tokimons.json
   def create
     @tokimon = Tokimon.new(tokimon_params)
-    @tokimon.total = @tokimon.fly + @tokimon.fight + @tokimon.fire + @tokimon.water + @tokimon.electric + @tokimon.ice
+  
     respond_to do |format|
+
       if @tokimon.save
+        @tokimon.total = @tokimon.fly + @tokimon.fight + @tokimon.fire + @tokimon.water + @tokimon.electric + @tokimon.ice
+	@tokimon.save
         format.html { redirect_to @tokimon, notice: 'Tokimon was successfully created.' }
         format.json { render :show, status: :created, location: @tokimon }
+
+        @trainer1 = Trainer.find_by(id: @tokimon.trainer_id)
+        @trainer1.level = Tokimon.where(trainer_id: @tokimon.trainer_id).count/3 + 1
+	@trainer1.save
+
       else
         format.html { render :new }
         format.json { render json: @tokimon.errors, status: :unprocessable_entity }
@@ -41,11 +49,27 @@ class TokimonsController < ApplicationController
   # PATCH/PUT /tokimons/1
   # PATCH/PUT /tokimons/1.json
   def update
-    @tokimon.total = @tokimon.fly + @tokimon.fight + @tokimon.fire + @tokimon.water + @tokimon.electric + @tokimon.ice
+
+    prevtrainer = @tokimon.trainer_id
+
+    @tokimon.update(tokimon_params)
+
     respond_to do |format|
       if @tokimon.update(tokimon_params)
         format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated.' }
         format.json { render :show, status: :ok, location: @tokimon }
+	 @tokimon.total = @tokimon.fly + @tokimon.fight + @tokimon.fire + @tokimon.water + @tokimon.electric + @tokimon.ice
+	 @tokimon.update(tokimon_params)
+
+        @trainer1 = Trainer.find_by(id: @tokimon.trainer_id)
+        @trainer1.level = Tokimon.where(trainer_id: @tokimon.trainer_id).count/3 + 1
+	@trainer1.save
+
+	@trainer2 = Trainer.find_by(id: prevtrainer)
+        @trainer2.level = Tokimon.where(trainer_id: prevtrainer).count/3+1
+        @trainer2.save
+ 
+
       else
         format.html { render :edit }
         format.json { render json: @tokimon.errors, status: :unprocessable_entity }
@@ -57,6 +81,11 @@ class TokimonsController < ApplicationController
   # DELETE /tokimons/1.json
   def destroy
     @tokimon.destroy
+
+        @trainer1 = Trainer.find_by(id: @tokimon.trainer_id)
+        @trainer1.level = Tokimon.where(trainer_id: @tokimon.trainer_id).count/3 + 1
+	@trainer1.save
+
     respond_to do |format|
       format.html { redirect_to tokimons_url, notice: 'Tokimon was successfully destroyed.' }
       format.json { head :no_content }
