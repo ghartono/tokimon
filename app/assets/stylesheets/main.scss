@@ -1,9 +1,18 @@
 table {
 	width: 80%;
 	border: 1px solid black;
+	margin: 10%;
 }
 
 tr, td, th{
 	border: 1px solid black;
 	padding: 1px;
+}
+
+tr, td, th p {
+	margin: 10%;
+}
+
+p, body, tr,td,th {
+	font-size: 20px;
 }

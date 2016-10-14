@@ -29,6 +29,7 @@
       <th>Electric</th>
       <th>Ice</th>
       <th>Total</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -45,6 +46,7 @@
         <td><%= tokimon.electric %></td>
         <td><%= tokimon.ice %></td>
         <td><%= tokimon.total %></td>
+	<td><%= link_to 'Show Info', tokimon %></td>
       </tr>
     <% end %>
   </tbody>

@@ -52,7 +52,8 @@
 
 <p>
   <strong>Trainer:</strong>
-  <%= @tokimon.trainer_id %>
+  <%= @tokimon.trainer.tname %> | 
+  <%= link_to 'Trainer Info', @tokimon.trainer %>
 </p>
 
 <%= link_to 'Edit', edit_tokimon_path(@tokimon) %> |
