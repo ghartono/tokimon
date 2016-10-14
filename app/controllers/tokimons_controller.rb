@@ -1,6 +1,7 @@
 class TokimonsController < ApplicationController
   before_action :set_tokimon, only: [:show, :edit, :update, :destroy]
 
+
   # GET /tokimons
   # GET /tokimons.json
   def index
@@ -25,7 +26,7 @@ class TokimonsController < ApplicationController
   # POST /tokimons.json
   def create
     @tokimon = Tokimon.new(tokimon_params)
-
+    @tokimon.total = @tokimon.fly + @tokimon.fight + @tokimon.fire + @tokimon.water + @tokimon.electric + @tokimon.ice
     respond_to do |format|
       if @tokimon.save
         format.html { redirect_to @tokimon, notice: 'Tokimon was successfully created.' }
@@ -40,6 +41,7 @@ class TokimonsController < ApplicationController
   # PATCH/PUT /tokimons/1
   # PATCH/PUT /tokimons/1.json
   def update
+    @tokimon.total = @tokimon.fly + @tokimon.fight + @tokimon.fire + @tokimon.water + @tokimon.electric + @tokimon.ice
     respond_to do |format|
       if @tokimon.update(tokimon_params)
         format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated.' }
